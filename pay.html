@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ladies' school</title>
+	<link href="css/reset.css" type="text/css" rel="stylesheet">
+	<link href="css/pay.css" type="text/css" rel="stylesheet">
+	<script src="js/jquery.js" type="text/javascript"></script>
+</head>
+<body>
+	<div class="payment wrapper">
+		
+		<p class="method">Выберите способ оплаты:</p>
+		<ul class="bank clearfix">
+			<li class="privat">
+				<img src="img/privat.jpg" alt="">
+				<a class="button" href="">Оплатить онлайн</a>
+			</li>
+			<li class="invoice">
+				<img src="img/bank.png" alt="">
+				<a class="button" id="invoice" href="">Получить счет для оплаты в банке</a>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
+
+<script>
+	$(".payment").prepend("<h1>Сумма для оплаты: "+localStorage.getItem("sum")+" грн.</h1>");
+	$(".privat .button").attr("href", localStorage.getItem("payment_url"));
+	$(".invoice .button").attr("href", localStorage.getItem("payment_invoice"));
+</script>

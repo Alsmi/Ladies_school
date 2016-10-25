@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ladies' school</title>
+	<link href="css/reset.css" type="text/css" rel="stylesheet">
+	<link href="css/form.css" type="text/css" rel="stylesheet">
+	<script src="js/jquery.js" type="text/javascript"></script>
+</head>
+<body>
+	<div class="form">
+		<div class="wrapper">
+
+			<h1>Для записи в школу заполните следующую информацию:</h1>
+
+			<form action="post.php" method="POST">
+				<div class="input">
+	                <label for="name">ФИО участницы</label>
+	                <input name="name" type="text" required="required">
+	            </div>
+	            <div class="input">
+	                <label for="tel_number">Контактный телефон участницы</label>
+	                <input name="tel_number" type="text" required="required">
+	            </div>
+	            <div class="input">
+	                <label for="age">Возраст участницы</label>
+	                <input name="age" type="text" required="required">
+	            </div>
+	            <div class="input">
+	                <label for="parent_name">ФИО одного из родителей</label>
+	                <input name="parent_name" type="text" required="required">
+	            </div>
+	            <div class="input">
+	                <label for="parent_number">Контактный телефон родителя</label>
+	                <input name="parent_number" type="text" required="required">
+	            </div>
+	            <div class="input">
+	                <label for="email">Email родителя</label>
+	                <input name="email" type="text" required="required">
+	            </div>
+
+	            <div class="input pay_sum">
+	                <input name="pay_sum" type="text" value="">
+	            </div>
+
+	            <input type="submit" value="Продолжить" class="button" id="send">
+			</form>
+
+		</div>
+	</div>
+</body>
+
+</html>
+
+<script>
+	$(".pay_sum input").attr("value", localStorage.getItem("sum"));
+</script>
